@@ -1,11 +1,11 @@
 #! /bin/bash -x
 
 
-# Code to validate 6-digit pincode
+# Code to restrict pincode taking alphabet at beginning.
 shopt -s extglob
-echo "Enter 6-digit pincode to validate"
+echo "Enter a pincode "
 read pincode
-pattern="^([0-9]){6}$"
+pattern="^([0-9]){6}$"  # It will allow only numbers to be enter
 
 if [[ $pincode =~ $pattern ]]
 then

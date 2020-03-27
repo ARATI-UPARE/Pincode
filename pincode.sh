@@ -1,17 +1,19 @@
 #! /bin/bash -x
 
 
-# Code to restrict pincode taking alphabet at beginning.
+# Code to allow space after 3digits in pincode.
+
 shopt -s extglob
-echo "Enter a pincode "
+
+echo "Enter a pincode with space after 3-digit"
 read pincode
-pattern="^([0-9]){6}$"  # It will allow only numbers to be enter
+pattern="^([0-9]{3}[ ]{0,1}[0-9]{3})$"  # It will allow space
 
 if [[ $pincode =~ $pattern ]]
 then
-      echo Yes
+      echo "$pincode is valid"
 else
-      echo NO
+      echo "$pincode is not valid"
 fi
 
 
